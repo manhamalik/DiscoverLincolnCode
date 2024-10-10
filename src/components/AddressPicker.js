@@ -125,13 +125,13 @@ const AddressPicker = ({ onSelect = () => {} }) => {
 				.to-text {
 					display: inline-block;
 					align-self: center;
-					white-space: nowrap; /* Prevent the "to" from breaking within itself */
+					white-space: nowrap;
 					box-sizing: border-box;
 				}
 
 				#time-box,
 				#date-box {
-					flex: 1 1 45%; /* Ensures time-boxes take equal width and are flexible */
+					flex: 1 1 45%;
 				}
 
 				.icon-wrapper:focus-within {
