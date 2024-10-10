@@ -29,8 +29,8 @@ const AboutCard = ({ imageSrc, heading, description }) => {
 				}
 
 				.aboutCard:hover {
-					transform: translateY(-10px); /* Lift the card on hover */
-					box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+					transform: translateY(-10px);
+					box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 				}
 
 				.imageContainer {
@@ -38,11 +38,11 @@ const AboutCard = ({ imageSrc, heading, description }) => {
 					overflow: hidden;
 					width: 160px;
 					height: 160px;
-					border: 4px solid var(--color-beige); /* Border around the image using the global variable */
+					border: 4px solid var(--color-beige);
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow on the border */
+					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 				}
 
 				.circularImage {
@@ -54,14 +54,14 @@ const AboutCard = ({ imageSrc, heading, description }) => {
 
 				.aboutHeading {
 					font-family: "Noto Sans Display", sans-serif;
-					font-weight: 600; /* Semibold */
+					font-weight: 600;
 					font-size: 2.3rem;
 					margin: 1.8vh 0;
 				}
 
 				.aboutDescription {
 					font-family: "Noto Sans Display", sans-serif;
-					font-weight: 400; /* Regular */
+					font-weight: 400;
 					font-size: 1.5rem;
 					margin-top: 0;
 					margin-bottom: 0;
