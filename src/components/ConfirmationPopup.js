@@ -1,11 +1,6 @@
 import React from "react";
 import Button from "./Button";
 
-//buttonsText with what you want the buttons to say [0] is danger text [1] is inverted text,
-//message: what the dialog should be
-//onConfirm: what happens when the user confirms
-//onCancel: what happens when the user cancels action? (probably closes confirmation popup)
-
 export default function ConfirmationPopup({
 	buttonsText = ["Quit", "Cancel"],
 	message = "Are you sure you want to quit? Points will NOT be saved.",
