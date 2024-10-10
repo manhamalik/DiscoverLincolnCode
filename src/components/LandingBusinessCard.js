@@ -22,7 +22,7 @@ const LandingBusinessCard = ({ business }) => {
         : "Dec 25";
     const description = business.attributes.Description || "Check out this cool business.";
     const host = business.attributes.users_permissions_user?.data?.attributes?.username || "Wine Tasterson";
-    const hostImage = business.attributes.users_permissions_user?.data?.attributes?.profileImage || "https://imgur.com/JtlrLHW.jpg"; //need a host image component on strapi
+    const hostImage = business.attributes.users_permissions_user?.data?.attributes?.profileImage || "https://imgur.com/JtlrLHW.jpg";
     const clickHref = `/businesses/${business?.attributes?.Slug ? business.attributes.Slug : "undefined"}`;
     const backgroundImageUrl =
     business.attributes.Images?.data?.[0]?.attributes?.formats?.large?.url ||
