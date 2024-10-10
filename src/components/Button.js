@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 
-/*type: primary (white text blue back)
-        inverted (blue text, white back)
-        danger (white text, red back)
-        green (white text, green back)
-onClick => pass a function for something to actually happen when button clicked
-*/
-
 export default function Button({
 	children,
 	type = "primary",
