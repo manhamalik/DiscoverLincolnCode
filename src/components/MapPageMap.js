@@ -28,7 +28,6 @@ import BackgroundSectionComponent from "./BackgroundSectionComponent";
 export default function MapPageMap({mapLocations}) {
 	const filters = useContext(Context);
 	console.log(mapLocations);
-	// list of all marked down locations, hardcoded for now
 	const markerDetails = {
 		"NaturalAttraction": {
 			"icon": faTree,
@@ -82,17 +81,6 @@ export default function MapPageMap({mapLocations}) {
 	}
 	
 	let [markersDisplayed, setMarkersDisplayed] = useState([...mapLocations]);
-
-	// const customIcon = new DivIcon({
-	//     html: ReactDOMServer.renderToString(
-	//         <div style={{color: "blue", display: "flex", justifyContent: "center"}}>
-	//             <FontAwesomeIcon icon={faTree} size="4x"/>
-	//         </div>
-
-	//     ),
-	//     iconSize: [50,50],
-	//     iconAnchor: [15, 42],
-	// })
 	useEffect(() => {
 		//activate when filters change
 
