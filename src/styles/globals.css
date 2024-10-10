@@ -1,0 +1,26 @@
+:root {
+  --color-primary: #22468a;
+  --color-tertiary: #428351;
+  --color-secondary: #2b5cba;
+  --color-beige: #d0cccc;
+}
+
+body {
+  margin: 0;
+}
+
+.leaflet-popup-content{
+  margin: 0 !important;
+  padding: 2em 2em 1em 1em;
+  background-color: rgba(0,0,0,0);
+
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+  display: none;
+}

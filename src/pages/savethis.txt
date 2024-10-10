@@ -1,0 +1,105 @@
+
+    //access auth username via a function
+    console.log(tagsData)
+    //default to creating an event
+    const tagsList = new Map();
+	const { jwt, username } = useContext(AuthContext);
+	tagsData.forEach(element => tagsList.set(element.attributes.type, {displayText: element.attributes.displayText, icon: icons[element.attributes.icon], id: element.id}));
+    const [selectedFiles, setSelectedFiles] = useState([]);
+    const [catagory, setCatagory] = useState([true,false,false]);
+    const catagoryName = ["events", "attractions", "businesses"];
+    const [choiceIndex, setchoiceIndex] = useState(0);
+    const [selectedTags, setSelectedtags] = useState(new Set());
+    const [description, setDescription] = useState('');
+    const [selectedlatlng, setSelectedlatlng] = useState({});
+    const choicesArray = [
+        ["culturalEvent", "food", "community", "sports"],
+        ["NaturalAttraction", "HistoricalAttraction", "CulturalAttraction", "RecreationalAttraction"],
+        ["RestaurantBusiness", "RetailBusiness", "EntertainementBusiness", "HealthBusiness"]
+    ]
+
+    function handleTagSelect(event) {
+		console.log(event.target.value);
+		const newSelected = new Set(selectedTags);
+
+		if (event.target.value !== "") {
+			if (newSelected.has(event.target.value)) {
+				newSelected.delete(event.target.value);
+			} else {
+				newSelected.add(event.target.value);
+			}
+		} else {
+			newSelected.clear();
+		}
+
+		setSelectedtags(newSelected);
+		console.log(selectedTags);
+	}
+
+	function handleTagClicked(value) {
+		const newSelected = new Set(selectedTags);
+		if (newSelected.has(value)) {
+			newSelected.delete(value);
+		} else {
+			newSelected.add(value);
+		}
+
+		setSelectedtags(newSelected);
+	}
+
+    function handleCatagoryChange(catagoryNum){
+        let newCatagories = [false,false,false];
+        newCatagories[catagoryNum] = true;
+        setchoiceIndex(catagoryNum);
+        setCatagory(newCatagories);
+    }
+
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log(jwt);
+        console.log(username);
+
+
+        const data = new FormData(event.target);
+        const imageData = new FormData();
+        const newObj = {}
+        console.log(selectedlatlng.latLng);
+        console.log(Array.from(selectedTags));
+        const selectedTagsId = [];
+        Array.from(selectedTags).forEach(element => selectedTagsId.push({"id":(tagsList.get(element)).id}));
+        data.forEach((element, key) => (newObj[key] = element));
+        console.log(selectedTagsId);
+        const formExport = {
+            "catagory": catagoryName[choiceIndex],
+            "Name": data.get("Name"),
+            "Slug": data.get("Name").trim().toLowerCase().replaceAll(" ", "-"),
+            "PhoneNumber": data.get("PhoneNumber"),
+            "Email": data.get("Email"),
+            "Type": data.get("Type"),
+            "Description": description,
+            "Location":{
+                "Address": data.get("location")
+            },
+            "Dates":{
+                "StartDate": data.get("start-date"),
+                "EndDate": data.get("end-date"),
+                "StartTime": `${data.get("time-start")}:00`,
+                "EndTime": `${data.get("time-end")}:00`
+            },
+            "Location":{
+                "Latitude": selectedlatlng.latLng.lat,
+                "Longitude": selectedlatlng.latLng.lng,
+                "Address": selectedlatlng.address
+            },
+            "Type":data.get("Type"),
+            "accessibility_tags": selectedTagsId
+
+
+        }
+
+        console.log(formExport);
+    
+
+        //sendForm(formExport, selectedFiles);
+        //uploadImage(selectedFiles);
+    }
