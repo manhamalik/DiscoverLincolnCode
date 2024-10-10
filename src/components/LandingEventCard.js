@@ -21,7 +21,7 @@ const LandingEventCard = ({ event }) => {
         : "Dec 25";
     const description = event.attributes.Description || "Join us for a free wine tasting event.";
     const host = event.attributes.users_permissions_user?.data?.attributes?.username || "Wine Tasterson";
-    const hostImage = event.attributes.users_permissions_user?.data?.attributes?.profileImage || "https://imgur.com/JtlrLHW.jpg"; //need a host image component on strapi
+    const hostImage = event.attributes.users_permissions_user?.data?.attributes?.profileImage || "https://imgur.com/JtlrLHW.jpg";
     const clickHref = `/events/${event?.attributes?.Slug ? event.attributes.Slug : "undefined"}`;
     const backgroundImageUrl =
     event.attributes.Images?.data?.[0]?.attributes?.formats?.large?.url ||
