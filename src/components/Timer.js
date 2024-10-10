@@ -19,7 +19,7 @@ export default function Timer({ outOfTime = () => {}, lengthInMS = 120000 }) {
 			});
 		}, 1000);
 
-		return () => clearInterval(interval); // Cleanup interval on component unmount
+		return () => clearInterval(interval);
 	}, []);
 
 	// Format time as MM:SS
