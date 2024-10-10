@@ -30,7 +30,7 @@ const FooterComponent = ({showClipPath=true}) => {
 		},
 	];
 
-	// Check if screen width is mobile size (725px or less)
+	// Check if screen width is mobile size (768px or less)
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 768);
@@ -58,28 +58,7 @@ const FooterComponent = ({showClipPath=true}) => {
 
 							</p>
 
-							{/* <div className={"footerSocial"}>
-								{socialIcons.map(({ icon, link }, index) => (
-									<a href={link} key={index} className="socialLink">
-										<FontAwesomeIcon icon={icon} />
-									</a>
-								))}
-							</div> */}
-
 							<div className="poweredAndCopyright">
-								{/* <div className="footerPowered">
-									<a
-										href="https://www.civiconnect.ca/"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<img
-											src="https://imgur.com/YvSBBFN.png"
-											alt="Powered by CiviConnect"
-											className="poweredImage"
-										/>
-									</a>
-								</div> */}
 								<div className={"footerSocial"}>
 								{socialIcons.map(({ icon, link }, index) => (
 									<a href={link} key={index} className="socialLink">
@@ -262,7 +241,7 @@ const FooterComponent = ({showClipPath=true}) => {
 					transform: scale(1.2);
 				}
 
-				/* CSS for Mobile (725px and smaller) */
+				/* CSS for Mobile (768px and smaller) */
 				@media (max-width: 768px) {
 					.footer {
 						height: 100vh;
@@ -277,7 +256,6 @@ const FooterComponent = ({showClipPath=true}) => {
 						align-items: center;
 						gap: 2vh;
 						max-width: 90vw;
-						// margin: 0 auto;
 						padding-top:0;
 						margin-top:0;
 						padding-bottom:20vw;
@@ -292,7 +270,7 @@ const FooterComponent = ({showClipPath=true}) => {
 					.footerSocial {
 						display: flex;
 						justify-content: center;
-						gap: 6.5vw; /* space between social icons */
+						gap: 6.5vw;
 						margin-bottom: 1.5vh;
 						text-align: center;
 						align-items: center;
@@ -313,7 +291,6 @@ const FooterComponent = ({showClipPath=true}) => {
 						align-items: center;
 						width: 100%;
 						flex-direction: column;
-						// max-width: 60vw;
 					}
 
 					.footerCopyright {
