@@ -114,7 +114,6 @@ export default function NavBar({ pageName = "Discover Lincoln" }) {
 		  position: relative;
         }
 
-		// explore dropdown
 		.explore-dropdown {
 			display: none;
 			position: absolute;
@@ -146,9 +145,6 @@ export default function NavBar({ pageName = "Discover Lincoln" }) {
         }
 
         .hover-deco:hover {
-        //   opacity: 0.5;
-        //   transition: all 0.2s;
-		//   filter: invert(1);
 		text-decoration: underline;
         }
 
