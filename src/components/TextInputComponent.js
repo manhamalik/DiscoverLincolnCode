@@ -75,13 +75,13 @@ export default function PageComponent({type, name}) {
 				.to-text {
 					display: inline-block;
 					align-self: center;
-					white-space: nowrap; /* Prevent the "to" from breaking within itself */
+					white-space: nowrap;
 					box-sizing: border-box;
 				}
 
 				#time-box,
 				#date-box {
-					flex: 1 1 45%; /* Ensures time-boxes take equal width and are flexible */
+					flex: 1 1 45%;
 				}
 
 				.icon-wrapper:focus-within {
@@ -110,14 +110,12 @@ export default function PageComponent({type, name}) {
 					outline: none;
 				}
 
-				/* Hide built-in icons for date input */
 				input[type="date"]::-webkit-inner-spin-button,
 				input[type="date"]::-webkit-calendar-picker-indicator {
 					display: none;
 					-webkit-appearance: none;
 				}
 
-				/* Hide built-in icons for time inputs */
 				input[type="time"]::-webkit-calendar-picker-indicator {
 					display: none;
 				}
