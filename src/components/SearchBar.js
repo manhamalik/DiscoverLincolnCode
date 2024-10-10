@@ -188,7 +188,7 @@ export default function SearchBar({ type, filtersChanged = () => {} }) {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
-						height: fit-content; /* Adjusted height to fit content */
+						height: fit-content;
 						margin: 2em 0em;
 						padding: 2em;
 						width: auto;
@@ -327,7 +327,7 @@ export default function SearchBar({ type, filtersChanged = () => {} }) {
 							width: 90%;
 						}
 						.search-bar {
-							margin-right: 0em; /* Fixed typo in margin-right */
+							margin-right: 0em;
 							font-size: 1rem;
 						}
 						.options-container {
